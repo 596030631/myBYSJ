@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Client</string>
+
+    <string name="menu_settings">Settings</string>
+
+    <string name="title_activity_main">Client</string>
+
+    <string name="node_title1">终端1</string>
+
+    <string name="init_temp">温度：0℃</string>
+
+    <string name="init_gas">气体异常</string>
+
+    <string name="init_lamp">点击开启</string>
+
+    <string name="init_humi">湿度：0%</string>
+
+    <string name="tips">提示信息：关闭所有灯</string>
+
+    <string name="network">网络设置</string>
+
+    <string name="lamp_off">关闭所有灯</string>
+
+    <string name="lamp_on">打开所有灯</string>
+
+    <string name="scene">情景模式</string>
+
+    <string name="init_tips"> Connecting to the Network!</string>
+
+    <string name="desc1">image_desc</string>
+
+    <string name="desc2">image_desc</string>
+
+    <string name="desc3">image_desc</string>
+
+    <string name="desc4">image_desc</string>
+
+    <string name="desc5">image_desc</string>
+
+    <string name="desc6">image_desc</string>
+
+    <string name="desc7">image_desc</string>
+
+    <string name="desc8">image_desc</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_base">BaseActivity</string>
+</resources>
