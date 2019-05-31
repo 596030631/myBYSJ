@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActy"
+    android:orientation="vertical"
+    android:background="@drawable/shape_gradient">
+    <View android:layout_width="match_parent" android:layout_height="30dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+        <TextView
+            android:id="@+id/main_title_text"
+            android:layout_width="140dp"
+            android:layout_height="33dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_btn1"
+            android:text="节点信息"
+            android:gravity="center"/>
+        <LinearLayout android:onClick="settings" android:layout_alignParentRight="true" android:layout_width="40dp" android:layout_height="40dp" android:orientation="horizontal">
+            <View android:layout_width="5dp" android:layout_height="5dp" android:background="@drawable/shape_circle0" android:layout_gravity="center"/>
+            <View android:layout_marginLeft="3dp" android:layout_width="5dp" android:layout_height="5dp" android:background="@drawable/shape_circle0" android:layout_gravity="center"/>
+            <View android:layout_marginLeft="3dp" android:layout_width="5dp" android:layout_height="5dp" android:background="@drawable/shape_circle0" android:layout_gravity="center"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_page_fragment"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="47dp">
+        <LinearLayout
+            android:id="@+id/btn_fragment_page1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <View
+                android:layout_gravity="top"
+                android:id="@+id/ischoose1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#fff"
+                android:visibility="gone"/>
+            <TextView
+                android:layout_marginTop="9dp"
+                android:id="@+id/home_icon"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:background="@drawable/home_2"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_fragment_page2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <View
+                android:visibility="gone"
+                android:layout_gravity="top"
+                android:id="@+id/ischoose2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#fff"/>
+            <TextView
+                android:layout_marginTop="9dp"
+                android:id="@+id/me_icon"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:background="@drawable/me_icon_1"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

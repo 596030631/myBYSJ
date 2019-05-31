@@ -29,7 +29,5 @@ public class BaseActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         super.onCreate(savedInstanceState);
-
     }
-
 }
