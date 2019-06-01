@@ -63,12 +63,12 @@ public class MainActy extends BaseActivity implements View.OnClickListener {
                 switch (i){
                     case 0 :
                         home_icon.setBackgroundResource(R.drawable.home_2);
-                        title.setText("区分仓库");
+                        title.setText("节点信息");
                         choose1.setVisibility(View.VISIBLE);
                         break;
                     case 1 :
                         me_icon.setBackgroundResource(R.drawable.me_icon_2);
-                        title.setText("我的信息");
+                        title.setText("其他");
                         choose2.setVisibility(View.VISIBLE);
                         break;
                 }

@@ -4,7 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.MyFragment">
+    <TextView
+        android:id="@+id/button"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:text="自动刷新"
+        android:gravity="center"
+        android:background="@drawable/shape_btn"/>
 <LinearLayout
+    android:layout_marginTop="40dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -12,81 +20,75 @@
         android:layout_width="match_parent"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        android:gravity="center"
-        android:layout_height="wrap_content">
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
         <TextView
-            android:gravity="center"
-            android:textSize="20dp"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:text="icon"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:layout_height="wrap_content">
-        <TextView
-            android:gravity="center"
-            android:textSize="20dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="35dp"
-            android:text="用  户  名" />
-        <TextView
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:text="123456"
-            android:textSize="20dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:layout_height="wrap_content">
-        <TextView
-            android:gravity="center"
-            android:textSize="20dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="35dp"
-            android:text="用  户  ID" />
-        <TextView
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:text="123456"
-            android:textSize="20dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_marginTop="25dp"
-        android:layout_width="match_parent"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:gravity="center"
-            android:textSize="20dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="版本更新" />
+            android:text="温度信息"
+            android:textColor="#d11"/>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1">
+    </android.support.v7.widget.RecyclerView>
+</ScrollView>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
         <TextView
-            android:gravity="center"
-            android:textSize="20dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="退出登录" />
+            android:text="湿度信息"
+            android:textColor="#d11"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1">
+            </android.support.v7.widget.RecyclerView>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+        <TextView
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="气体信息"
+            android:textColor="#d11"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1">
+
+        </android.support.v7.widget.RecyclerView>
     </LinearLayout>
 
 </LinearLayout>

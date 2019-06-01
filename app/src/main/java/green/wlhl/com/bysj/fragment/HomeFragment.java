@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -18,6 +20,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.regex.Matcher;
@@ -26,6 +32,8 @@ import green.wlhl.com.bysj.ClientThreads;
 import green.wlhl.com.bysj.LoginActivity;
 import green.wlhl.com.bysj.MainActy;
 import green.wlhl.com.bysj.R;
+import green.wlhl.com.bysj.sqlite.Action;
+
 public class HomeFragment extends Fragment {
     protected String strIpAddr;
     private TextView
@@ -173,25 +181,55 @@ public class HomeFragment extends Fragment {
             MainMsg = ClientThreads.childHandler.obtainMessage(ClientThreads.TX_DATA, len, 0, (Object) buffer);
             ClientThreads.childHandler.sendMessage(MainMsg);
         }catch (Exception e){
-            Toast.makeText(mContext, "设备未连接", Toast.LENGTH_LONG).show();
+           e.printStackTrace();
         }
     }
     @SuppressLint("HandlerLeak")
     void initMainHandler() {
+        final List<String> listT = new ArrayList<>();
+        final List<String> listH = new ArrayList<>();
+        final List<String> listG = new ArrayList<>();
         mainHandler = new Handler() {
             //主线程消息处理中心
             public void handleMessage(Message msg) {
+                final SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+
                 switch (msg.what) {
                     case RX_DATA_UPDATE_UI:
+                        String bizdate = df.format(new Date());
                         //终端1
                         strTemp = "温度：" + NodeData[0][0] + "℃";
                         textTemp1.setText(strTemp);
+
+                        listT.add(String.valueOf(NodeData[0][0]));
+                        if(listT.size() >= 10){
+                            Action.insertRecordTemp(getContext(),String.valueOf(NodeData[0][0]),bizdate);
+                            listT.clear();
+                        }
+
+                        Log.e("TAG","采集到温度："+NodeData[0][0]+"");
                         strHumi = "湿度：" + NodeData[0][1] + "%";
+
+                        listH.add(String.valueOf(NodeData[0][0]));
+                        if(listH.size() >= 10){
+                            Action.insertRecordHumi(getContext(),String.valueOf(NodeData[0][1]),bizdate);
+                            listH.clear();
+                        }
+
+
                         textHumi1.setText(strHumi);
                         if (NodeData[0][2] == 1)
                             ivGas1.setText("气体正常");   //气体高电平时正常
                         else
                             ivGas1.setText("气体异常");   //气体低电平时异常
+
+                        listG.add(String.valueOf(NodeData[0][0]));
+                        if(listG.size() >= 10){
+                            Action.insertRecordGas(getContext(),String.valueOf(NodeData[0][2]),bizdate);
+                            listG.clear();
+                        }
+
+                        Log.e("TAG","--------------------------"+"采集到气体："+NodeData[0][2]);
 
                         if (NodeData[0][3] == 0)           //低电平亮，高电平灭
                             btnLamp1.setText("点击关闭"); //灯亮

@@ -85,10 +85,15 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         et_ip.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                if(s != null){
+                    ip = s.toString();
+                }
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s != null){
+                    ip = s.toString();
+                }
             }
             @Override
             public void afterTextChanged(Editable s) {

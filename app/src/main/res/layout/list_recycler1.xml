@@ -1,0 +1,61 @@
+<LinearLayout android:layout_width="30dp"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="bottom">
+
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_temp"
+        android:textSize="12dp"
+        android:textColor="#287CE4"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_temp_line"
+        android:background="#E4E1DA"
+        android:layout_margin="10dp"/>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="vertical">
+
+    <View
+        android:layout_height="0.1dp"
+        android:layout_width="match_parent"
+        android:background="#111"/>
+
+    <TextView
+        android:id="@+id/hour"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00"/>
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <View android:layout_marginLeft="0dp"  android:layout_width="2dp" android:layout_height="1dp" android:background="@drawable/shape_circle0" android:layout_gravity="center"/>
+        <View android:layout_marginLeft="3dp" android:layout_width="2dp" android:layout_height="1dp" android:background="@drawable/shape_circle0" android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/mine"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00"/>
+</LinearLayout>
+
+
+
+</LinearLayout>
